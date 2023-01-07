@@ -2,6 +2,14 @@ import snowboydecoder
 import sys
 import signal
 
+def assertion_excepthook(type, value, traceback):
+    if type is AssertionError:
+        print(value)
+    else:
+        sys.__excepthook__(type, value, traceback)
+
+sys.excepthook = assertion_excepthook
+
 interrupted = False
 
 
