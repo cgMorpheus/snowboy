@@ -33,7 +33,7 @@ python demo.py hotword.pmdl
 ### Build your own personal models (using Docker)
 * Build a new docker image based on `Dockerfile` from this repo:
 ```
-docker build -t snowboy-pmdl .
+docker build --network=host -t snowboy-pmdl .
 ``` 
 
 * This will create an image which you can run to train your personal model. In order for this to work you'll need to create a directory called model on your host machine (Ubuntu 18 or whatever) and place your three audio files in there. So the directory should look something like this (note: the wav files need the exact names as below or it won't work):
