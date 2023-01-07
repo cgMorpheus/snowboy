@@ -115,7 +115,7 @@ class HotwordDetector(object):
         self.detector.ApplyFrontend(apply_frontend)
         self.num_hotwords = self.detector.NumHotwords()
 
-        if len(decoder_model) > 1 and len(sensitivity) == 1:
+        if self.num_hotword > 1 and len(sensitivity) == 1:
             sensitivity = sensitivity*self.num_hotwords
         if len(sensitivity) != 0:
             assert self.num_hotwords == len(sensitivity), \
